@@ -4,7 +4,6 @@ import ProcessSection from "../components/ProcessSection";
 import ServicesSection from "../components/ServicesSection";
 import PersonalizedSection from "../components/PersonalizedSection";
 import SuccessStoriesSection from "../components/SuccessStoriesSection";
-import FinalCTASection from "../components/FinalCTASection";
 
 const Index = () => {
   return (
@@ -15,7 +14,7 @@ const Index = () => {
       <ServicesSection />
       <PersonalizedSection />
       <SuccessStoriesSection />
-      <FinalCTASection />
+      
     </div>
   );
 };
