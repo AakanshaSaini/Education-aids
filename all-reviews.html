@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Reviews - Academic Excellence Pro</title>
+    <meta name="description" content="View all student reviews and testimonials sorted by rating. Discover how we've helped students achieve academic success.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'hsl(var(--primary))',
+                        'secondary': 'hsl(var(--secondary))',
+                        'background': 'hsl(var(--background))',
+                        'foreground': 'hsl(var(--foreground))',
+                        'card': 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        'muted': 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        'accent': 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        'destructive': 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                        'border': 'hsl(var(--border))',
+                        'input': 'hsl(var(--input))',
+                        'ring': 'hsl(var(--ring))',
+                        'success': 'hsl(var(--success))',
+                        'trust': 'hsl(var(--trust))',
+                        'trust-foreground': 'hsl(var(--trust-foreground))'
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        'gradient-hero': 'linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%)',
+                        'gradient-subtle': 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)'
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(102, 126, 234, 0.3)',
+                        'elegant': '0 10px 25px rgba(0, 0, 0, 0.1)'
+                    },
+                    transitionProperty: {
+                        'smooth': 'all'
+                    },
+                    transitionTimingFunction: {
+                        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    },
+                    transitionDuration: {
+                        'smooth': '300ms'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --success: 142.1 76.2% 36.3%;
+            --trust: 210 40% 98%;
+            --trust-foreground: 222.2 84% 4.9%;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+            --success: 142.1 70.6% 45.3%;
+            --trust: 217.2 32.6% 17.5%;
+            --trust-foreground: 210 40% 98%;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+
+        .bg-gradient-subtle {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .shadow-elegant {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .transition-smooth {
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground min-h-screen">
+    <!-- Header Section -->
+    <section class="relative py-20 bg-gradient-hero overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    All <span class="text-pink-300">Reviews</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Browse all student testimonials sorted by rating and discover our impact
+                </p>
+                <a href="success-stories.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-smooth h-11 rounded-md px-8 min-w-48">
+                    ← Back to Success Stories
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Reviews Section -->
+    <section class="py-20 bg-background">
+        <div class="container mx-auto px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                        All Student Reviews
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Sorted by rating to show the highest quality feedback first
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allReviews">
+                    <!-- Reviews will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-hero relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Ready to Write Your Success Story?
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Join thousands of students who have achieved academic success with our professional assistance
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a 
+                        href="https://wa.me/12368623068?text=Hello" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-white text-primary font-semibold shadow-glow hover:shadow-elegant hover:scale-105 transition-smooth h-11 rounded-md px-8 min-w-64"
+                    >
+                        Start Your Journey Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get all reviews (existing + user submitted)
+        const existingReviews = [
+            {
+                name: "Alex M.",
+                course: "Human Resource",
+                rating: 5,
+                review: "Elevate Academic Assist completely transformed my study habits. I went from struggling with complex topics to acing my exams. The personalized guidance and resources were a game-changer!",
+                date: "2024-01-15"
+            },
+            {
+                name: "Sarah P.",
+                course: "Ph.D. in Industrial Relations",
+                rating: 5,
+                review: "The support I received for my research paper was invaluable. The feedback was detailed, and my mentor helped me structure my arguments effectively. I'm so grateful for their expertise.",
+                date: "2024-01-10"
+            },
+            {
+                name: "David L.",
+                course: "MicroEconomics",
+                rating: 5,
+                review: "I was able to manage my workload and meet all my deadlines thanks to their academic planning tools. The 'Getting Started' chat was quick and easy, and the help was always there when I needed it. Highly recommended!",
+                date: "2024-01-08"
+            },
+            {
+                name: "Jaspreet Kaur",
+                course: "Ph.D. in Computer Science",
+                rating: 5,
+                review: "Elevate Academic Assist was a lifesaver for my Ph.D. thesis. Their expert guidance on structuring my research paper and refining my arguments was invaluable. I was stuck for months, but their team helped me get back on track and submit with confidence.",
+                date: "2024-01-05"
+            },
+            {
+                name: "Amaira Arora",
+                course: "Master's in Business Administration",
+                rating: 5,
+                review: "Juggling a full-time job and my MBA was incredibly challenging. The team helped me with my case studies and assignments, ensuring they were well-researched and plagiarism-free. My grades have improved significantly. Highly recommended!",
+                date: "2024-01-03"
+            },
+            {
+                name: "Michael R.",
+                course: "Engineering",
+                rating: 4,
+                review: "Great support with my technical assignments. The tutors were knowledgeable and helped me understand complex concepts.",
+                date: "2024-01-01"
+            },
+            {
+                name: "Emma S.",
+                course: "Psychology",
+                rating: 4,
+                review: "Excellent help with my research methodology. The feedback was constructive and helped improve my paper significantly.",
+                date: "2023-12-28"
+            }
+        ];
+
+        // Get user submitted reviews from localStorage
+        const userReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+        const allReviews = [...existingReviews, ...userReviews];
+
+        // Sort reviews by rating (highest first) and then by date (newest first)
+        const sortedReviews = allReviews.sort((a, b) => {
+            if (b.rating !== a.rating) {
+                return b.rating - a.rating;
+            }
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        // Function to render stars
+        function renderStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+                } else {
+                    stars += '<svg class="w-5 h-5 fill-current text-gray-300" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+                }
+            }
+            return stars;
+        }
+
+        // Function to render all reviews
+        function renderAllReviews() {
+            const container = document.getElementById('allReviews');
+            container.innerHTML = '';
+
+            sortedReviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'bg-card p-8 rounded-2xl shadow-elegant border border-border hover:shadow-glow transition-smooth';
+                
+                reviewCard.innerHTML = `
+                    <div class="flex justify-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                            ${review.name.charAt(0)}
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">${review.name}</h3>
+                        <p class="text-sm text-muted-foreground mb-2">${review.course}</p>
+                        <div class="flex justify-center text-yellow-400 mb-2">
+                            ${renderStars(review.rating)}
+                        </div>
+                        <p class="text-xs text-muted-foreground">${new Date(review.date).toLocaleDateString()}</p>
+                    </div>
+                    <blockquote class="text-muted-foreground leading-relaxed italic">
+                        "${review.review}"
+                    </blockquote>
+                `;
+                
+                container.appendChild(reviewCard);
+            });
+        }
+
+        // Load reviews when page loads
+        document.addEventListener('DOMContentLoaded', renderAllReviews);
+    </script>
+</body>
+</html>

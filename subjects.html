@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Services - Subject Selection</title>
+    <meta name="description" content="Select your subjects and get academic assistance. Professional help for all subjects with same-day delivery.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'hsl(var(--primary))',
+                        'secondary': 'hsl(var(--secondary))',
+                        'background': 'hsl(var(--background))',
+                        'foreground': 'hsl(var(--foreground))',
+                        'card': 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        'muted': 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        'accent': 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        'destructive': 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                        'border': 'hsl(var(--border))',
+                        'input': 'hsl(var(--input))',
+                        'ring': 'hsl(var(--ring))',
+                        'success': 'hsl(var(--success))',
+                        'trust': 'hsl(var(--trust))',
+                        'trust-foreground': 'hsl(var(--trust-foreground))'
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        'gradient-hero': 'linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%)',
+                        'gradient-subtle': 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)'
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(102, 126, 234, 0.3)',
+                        'elegant': '0 10px 25px rgba(0, 0, 0, 0.1)'
+                    },
+                    transitionProperty: {
+                        'smooth': 'all'
+                    },
+                    transitionTimingFunction: {
+                        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    },
+                    transitionDuration: {
+                        'smooth': '300ms'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --success: 142.1 76.2% 36.3%;
+            --trust: 210 40% 98%;
+            --trust-foreground: 222.2 84% 4.9%;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+            --success: 142.1 70.6% 45.3%;
+            --trust: 217.2 32.6% 17.5%;
+            --trust-foreground: 210 40% 98%;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+
+        .bg-gradient-subtle {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .shadow-elegant {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .transition-smooth {
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground min-h-screen">
+    <div class="container mx-auto px-6 py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+                Our <span class="text-gradient">Academic Services</span>
+            </h1>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Browse the subjects below. You can select one or more subjects you need assistance with, and we will get back to you on WhatsApp to discuss your assignment.
+            </p>
+        </div>
+
+        <!-- Subject Selection Section -->
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-card rounded-2xl shadow-elegant p-8 mb-8 border border-border">
+                <h2 class="text-2xl font-semibold text-card-foreground mb-6 text-center">
+                    Select Your Subjects
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Mathematics" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Mathematics</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Physics" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Physics</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Chemistry" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Chemistry</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Biology" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Biology</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="History" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">History</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Literature" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Literature</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Computer Science" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Computer Science</span>
+                    </label>
+                    
+                    <label class="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-accent hover:border-primary/20 transition-smooth cursor-pointer group">
+                        <input type="checkbox" name="subjects" value="Economics" class="w-5 h-5 text-primary border-border rounded focus:ring-primary focus:ring-2 transition-smooth">
+                        <span class="text-card-foreground font-medium group-hover:text-primary transition-smooth">Economics</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Contact Button Section -->
+            <div class="text-center">
+                <button 
+                    id="contactBtn" 
+                    class="bg-gradient-primary text-white font-semibold py-4 px-8 rounded-lg shadow-glow hover:shadow-elegant hover:scale-105 transition-smooth text-lg min-w-64 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    onclick="contactOnWhatsApp()"
+                >
+                    Contact us on WhatsApp
+                </button>
+            </div>
+
+            <!-- Selected Subjects Display -->
+            <div id="selectedSubjects" class="mt-6 text-center text-muted-foreground">
+                <p class="text-sm">No subjects selected</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track selected subjects
+        let selectedSubjects = [];
+
+        // Add event listeners to all checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[name="subjects"]');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateSelectedSubjects();
+                });
+            });
+        });
+
+        // Update the selected subjects display
+        function updateSelectedSubjects() {
+            const checkboxes = document.querySelectorAll('input[name="subjects"]:checked');
+            selectedSubjects = Array.from(checkboxes).map(cb => cb.value);
+            
+            const displayElement = document.getElementById('selectedSubjects');
+            const contactBtn = document.getElementById('contactBtn');
+            
+            if (selectedSubjects.length > 0) {
+                displayElement.innerHTML = `
+                    <p class="text-sm text-primary font-medium">
+                        Selected: ${selectedSubjects.join(', ')}
+                    </p>
+                `;
+                contactBtn.disabled = false;
+            } else {
+                displayElement.innerHTML = '<p class="text-sm text-muted-foreground">No subjects selected</p>';
+                contactBtn.disabled = true;
+            }
+        }
+
+        // Contact on WhatsApp function
+        function contactOnWhatsApp() {
+            const phoneNumber = '12368623068';
+            let message = 'Hello';
+            
+            if (selectedSubjects.length > 0) {
+                message = `Hello, I'm interested in assignments for the following subjects: ${selectedSubjects.join(', ')}.`;
+            }
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Initialize the page
+        updateSelectedSubjects();
+    </script>
+</body>
+</html> 
