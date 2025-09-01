@@ -50,13 +50,19 @@ const FinalCTASection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/subjects">
+              <Button variant="outline-hero" size="lg" className="min-w-64 group">
+                Get Started Today
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             <a 
-              href="./success-stories.html" 
+              href="https://wa.me/12368623068?text=Hello" 
               target="_blank" 
               rel="noopener noreferrer"
             >
               <Button variant="outline-hero" size="lg" className="min-w-64 group">
-                Start Your Success Story
+                Connect with Us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>

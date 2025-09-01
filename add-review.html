@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Review - Academic Excellence Pro</title>
+    <meta name="description" content="Share your success story and help other students by adding your review of our academic assistance services.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'hsl(var(--primary))',
+                        'secondary': 'hsl(var(--secondary))',
+                        'background': 'hsl(var(--background))',
+                        'foreground': 'hsl(var(--foreground))',
+                        'card': 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        'muted': 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        'accent': 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        'destructive': 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                        'border': 'hsl(var(--border))',
+                        'input': 'hsl(var(--input))',
+                        'ring': 'hsl(var(--ring))',
+                        'success': 'hsl(var(--success))',
+                        'trust': 'hsl(var(--trust))',
+                        'trust-foreground': 'hsl(var(--trust-foreground))'
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        'gradient-hero': 'linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%)',
+                        'gradient-subtle': 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)'
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(102, 126, 234, 0.3)',
+                        'elegant': '0 10px 25px rgba(0, 0, 0, 0.1)'
+                    },
+                    transitionProperty: {
+                        'smooth': 'all'
+                    },
+                    transitionTimingFunction: {
+                        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    },
+                    transitionDuration: {
+                        'smooth': '300ms'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --success: 142.1 76.2% 36.3%;
+            --trust: 210 40% 98%;
+            --trust-foreground: 222.2 84% 4.9%;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+            --success: 142.1 70.6% 45.3%;
+            --trust: 217.2 32.6% 17.5%;
+            --trust-foreground: 210 40% 98%;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+
+        .bg-gradient-subtle {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .shadow-elegant {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .transition-smooth {
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground min-h-screen">
+    <!-- Header Section -->
+    <section class="relative py-20 bg-gradient-hero overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Add Your <span class="text-pink-300">Review</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Share your success story and help other students discover our academic assistance
+                </p>
+                <a href="index.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-smooth h-11 rounded-md px-8 min-w-48">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Form Section -->
+    <section class="py-20 bg-gradient-subtle">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                        Share Your Success Story
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Help others by sharing your academic journey and how we assisted you in achieving your goals
+                    </p>
+                </div>
+                
+                <div class="bg-card p-8 rounded-2xl shadow-elegant border border-border">
+                    <form id="reviewForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-card-foreground mb-2">
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    class="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                    placeholder="Enter your full name"
+                                />
+                            </div>
+                            <div>
+                                <label for="course" class="block text-sm font-medium text-card-foreground mb-2">
+                                    Course/Program *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="course"
+                                    name="course"
+                                    required
+                                    class="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                    placeholder="e.g., MBA, Ph.D. in Computer Science"
+                                />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-card-foreground mb-2">
+                                Rating *
+                            </label>
+                            <div class="flex gap-2" id="starRating">
+                                <!-- Stars will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="review" class="block text-sm font-medium text-card-foreground mb-2">
+                                Your Review *
+                            </label>
+                            <textarea
+                                id="review"
+                                name="review"
+                                rows="4"
+                                required
+                                class="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none"
+                                placeholder="Share your experience and how we helped you achieve academic success..."
+                            ></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button
+                                type="submit"
+                                class="bg-gradient-primary text-white font-semibold shadow-glow hover:shadow-elegant hover:scale-105 transition-smooth h-11 px-8 min-w-48 rounded-lg"
+                            >
+                                Submit Review
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-hero relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Ready to Write Your Success Story?
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                    Join thousands of students who have achieved academic success with our professional assistance
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a 
+                        href="https://wa.me/12368623068?text=Hello" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-white text-primary font-semibold shadow-glow hover:shadow-elegant hover:scale-105 transition-smooth h-11 rounded-md px-8 min-w-64"
+                    >
+                        Start Your Journey Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let selectedRating = 0;
+        let hoveredRating = 0;
+
+        // Function to render star rating
+        function renderStarRating() {
+            const container = document.getElementById('starRating');
+            container.innerHTML = '';
+            
+            for (let i = 1; i <= 5; i++) {
+                const starButton = document.createElement('button');
+                starButton.type = 'button';
+                starButton.className = `text-2xl transition-smooth ${
+                    i <= (hoveredRating || selectedRating) ? 'text-yellow-400' : 'text-gray-300'
+                } hover:text-yellow-400`;
+                starButton.innerHTML = '★';
+                
+                starButton.addEventListener('click', () => {
+                    selectedRating = i;
+                    renderStarRating();
+                });
+                
+                starButton.addEventListener('mouseenter', () => {
+                    hoveredRating = i;
+                    renderStarRating();
+                });
+                
+                starButton.addEventListener('mouseleave', () => {
+                    hoveredRating = 0;
+                    renderStarRating();
+                });
+                
+                container.appendChild(starButton);
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!selectedRating) {
+                alert('Please select a rating');
+                return;
+            }
+
+            const formData = new FormData(this);
+            const reviewData = {
+                name: formData.get('name'),
+                course: formData.get('course'),
+                rating: selectedRating,
+                review: formData.get('review'),
+                date: new Date().toISOString().split('T')[0]
+            };
+
+            // Get existing reviews from localStorage
+            let userReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+            userReviews.push(reviewData);
+            
+            // Store updated reviews
+            localStorage.setItem('userReviews', JSON.stringify(userReviews));
+            
+            // Show success message
+            alert('Thank you for your review! It has been added to our success stories.');
+            
+            // Reset form
+            this.reset();
+            selectedRating = 0;
+            renderStarRating();
+        });
+
+        // Initialize star rating when page loads
+        document.addEventListener('DOMContentLoaded', renderStarRating);
+    </script>
+</body>
+</html>
