@@ -10,6 +10,10 @@ interface Review {
 }
 
 const AllReviews = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when component mounts
+  }, []);
+  
   const [allReviews, setAllReviews] = useState<Review[]>([]);
 
   const existingReviews: Review[] = [
