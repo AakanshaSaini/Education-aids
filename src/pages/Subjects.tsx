@@ -4,17 +4,14 @@ const Subjects = () => {
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
 
   const subjects = [
-    "Case Studies",
-    "Business Management",
-    "Marketing",
-    "Accounting",
-    "Political Science",
-    "Hospital Management",
-    "Finance",
-    "Presentation PPTs",
-    "SAP",
-    "Human Resource",
-    "Nursing"
+    "Mathematics",
+    "Physics", 
+    "Chemistry",
+    "Biology",
+    "History",
+    "Literature",
+    "Computer Science",
+    "Economics"
   ];
 
   const handleSubjectChange = (subject: string, checked: boolean) => {
@@ -33,19 +30,21 @@ const Subjects = () => {
       message = `Hello, I'm interested in assignments for the following subjects: ${selectedSubjects.join(', ')}.`;
     }
     
+    // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
+    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-6 py-12">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Our <span className="text-primary font-bold">Academic Services</span>
+            Our <span className="text-gradient">Academic Services</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Browse the subjects below. You can select one or more subjects you need assistance with, and we will get back to you on WhatsApp to discuss your assignment.

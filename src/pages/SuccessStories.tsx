@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Star, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Plus } from "lucide-react";
 
 interface Review {
   name: string;
@@ -11,14 +10,8 @@ interface Review {
   date: string;
 }
 
-const SuccessStoriesSection = () => {
-  const [rating, setRating] = useState(0);
-  const [hoveredRating, setHoveredRating] = useState(0);
-  const [formData, setFormData] = useState({
-    name: "",
-    course: "",
-    review: ""
-  });
+const SuccessStories = () => {
+  const [allReviews, setAllReviews] = useState<Review[]>([]);
 
   const existingReviews: Review[] = [
     {
@@ -58,67 +51,19 @@ const SuccessStoriesSection = () => {
     }
   ];
 
-  const [allReviews, setAllReviews] = useState<Review[]>(existingReviews);
-
   useEffect(() => {
-    // Load user reviews from localStorage
+    // Get user submitted reviews from localStorage
     const userReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
-    setAllReviews([...existingReviews, ...userReviews]);
+    const combinedReviews = [...existingReviews, ...userReviews];
+    
+    // Filter 5-star reviews and sort by date (newest first)
+    const fiveStarReviews = combinedReviews
+      .filter(review => review.rating === 5)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 5); // Show only latest 5
+    
+    setAllReviews(fiveStarReviews);
   }, []);
-
-  const handleStarClick = (starRating: number) => {
-    setRating(starRating);
-  };
-
-  const handleStarHover = (starRating: number) => {
-    setHoveredRating(starRating);
-  };
-
-  const handleStarLeave = () => {
-    setHoveredRating(0);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!rating) {
-      alert('Please select a rating');
-      return;
-    }
-
-    const newReview: Review = {
-      name: formData.name,
-      course: formData.course,
-      rating: rating,
-      review: formData.review,
-      date: new Date().toISOString().split('T')[0]
-    };
-
-    // Get existing reviews from localStorage
-    let userReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
-    userReviews.push(newReview);
-    
-    // Store updated reviews
-    localStorage.setItem('userReviews', JSON.stringify(userReviews));
-    
-    // Update state
-    setAllReviews([...existingReviews, ...userReviews]);
-    
-    // Show success message
-    alert('Thank you for your review! It has been added to our success stories.');
-    
-    // Reset form
-    setFormData({ name: "", course: "", review: "" });
-    setRating(0);
-  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -128,30 +73,28 @@ const SuccessStoriesSection = () => {
     ));
   };
 
-  const renderStarRating = () => {
-    return Array.from({ length: 5 }, (_, index) => {
-      const starRating = index + 1;
-      const isActive = starRating <= (hoveredRating || rating);
-      
-      return (
-        <button
-          key={index}
-          type="button"
-          className={`text-2xl transition-smooth ${
-            isActive ? 'text-yellow-400' : 'text-gray-300'
-          } hover:text-yellow-400`}
-          onClick={() => handleStarClick(starRating)}
-          onMouseEnter={() => handleStarHover(starRating)}
-          onMouseLeave={handleStarLeave}
-        >
-          ★
-        </button>
-      );
-    });
-  };
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header Section */}
+      <section className="relative py-20 bg-gradient-hero overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Success <span className="text-pink-300">Stories</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+              Real testimonials from students who achieved academic excellence with our professional assistance
+            </p>
+            <Link 
+              to="/" 
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-smooth h-11 rounded-md px-8 min-w-48"
+            >
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Success Stories Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
@@ -163,7 +106,7 @@ const SuccessStoriesSection = () => {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Discover how we've helped students transform their academic journey and achieve their goals
               </p>
-              <div className="flex justify-center gap-4 mt-6">
+              <div className="flex justify-center mt-6">
                 <Link 
                   to="/all-reviews" 
                   className="inline-flex items-center justify-center gap-2 bg-gradient-primary text-white p-3 rounded-full shadow-glow hover:shadow-elegant hover:scale-110 transition-smooth"
@@ -171,19 +114,12 @@ const SuccessStoriesSection = () => {
                   <Plus className="w-6 h-6" />
                   <span className="text-sm font-medium">View All Reviews</span>
                 </Link>
-                <Link 
-                  to="/add-review" 
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-primary text-white p-3 rounded-full shadow-glow hover:shadow-elegant hover:scale-110 transition-smooth"
-                >
-                  <Plus className="w-6 h-6" />
-                  <span className="text-sm font-medium">Add a Review</span>
-                </Link>
               </div>
             </div>
             
             <div className="relative">
               <div className="flex overflow-x-auto gap-8 pb-4 scrollbar-hide snap-x snap-mandatory">
-                {allReviews.slice(0, 5).map((review, index) => (
+                {allReviews.map((review, index) => (
                   <div 
                     key={index}
                     className="bg-card p-8 rounded-2xl shadow-elegant border border-border hover:shadow-glow transition-smooth flex-shrink-0 w-80 snap-start"
@@ -210,9 +146,6 @@ const SuccessStoriesSection = () => {
           </div>
         </div>
       </section>
-
-      {/* Review Submission Section */}
-      
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero relative overflow-hidden">
@@ -241,4 +174,4 @@ const SuccessStoriesSection = () => {
   );
 };
 
-export default SuccessStoriesSection;
+export default SuccessStories;
