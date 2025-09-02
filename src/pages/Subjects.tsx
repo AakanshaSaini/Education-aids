@@ -4,14 +4,17 @@ const Subjects = () => {
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
 
   const subjects = [
-    "Mathematics",
-    "Physics", 
-    "Chemistry",
-    "Biology",
-    "History",
-    "Literature",
-    "Computer Science",
-    "Economics"
+    "Case Studies",
+    "Business Management",
+    "Marketing",
+    "Accounting",
+    "Political Science",
+    "Hospital Management",
+    "Finance",
+    "Presentation PPT's",
+    "SAP",
+    "Human Resource",
+    "Nursing"
   ];
 
   const handleSubjectChange = (subject: string, checked: boolean) => {
