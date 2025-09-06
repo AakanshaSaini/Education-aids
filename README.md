@@ -1,8 +1,8 @@
-📘 𝙀𝙡𝙚𝙫𝙖𝙩𝙚 𝘼𝙘𝙖𝙙𝙚𝙢𝙞𝙘 𝘼𝙨𝙨𝙞𝙨𝙩
-Elevate Academic Assist is a specialized freelancing platform designed to support students and professionals with high-quality academic and professional writing services. We focus on plagiarism-free, same-day delivery, and 100% confidentiality ensuring trust and reliability in every project.
+📘 𝙀𝙙𝙪𝙘𝙖𝙩𝙞𝙤𝙣-𝙖𝙞𝙙𝙨
+Education-aids is a specialized freelancing platform designed to support students and professionals with high-quality academic and professional writing services. We focus on plagiarism-free, same-day delivery, and 100% confidentiality ensuring trust and reliability in every project.
 
 
-𝙇𝙞𝙫𝙚 𝙒𝙚𝙗𝙨𝙞𝙩𝙚 : elevate-academic-assist.vercel.app
+𝙇𝙞𝙫𝙚 𝙒𝙚𝙗𝙨𝙞𝙩𝙚 : https://www.education-aids.com/
 
 
 🚀 𝙁𝙚𝙖𝙩𝙪𝙧𝙚𝙨
