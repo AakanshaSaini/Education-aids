@@ -37,7 +37,7 @@ Our platform covers a wide range of academic and professional domains, including
 If you want to run the project locally:
 
  # Clone the repo
-  git clone https://github.com/AakanshaSaini/elevate-academic-assist.git  
+  git clone https://github.com/AakanshaSaini/Education-aids.git 
 
  # Navigate to project directory
   cd elevate-academic-assist  
