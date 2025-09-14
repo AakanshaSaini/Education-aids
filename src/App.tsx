@@ -9,6 +9,7 @@ import AddReview from "./pages/AddReview";
 import AllReviews from "./pages/AllReviews";
 import SuccessStories from "./pages/SuccessStories";
 import NotFound from "./pages/NotFound";
+import DisclaimerFooter from "@/components/DisclaimerFooter";
 
 const queryClient = new QueryClient();
 
@@ -17,17 +18,22 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/subjects" element={<Subjects />} />
-          <Route path="/add-review" element={<AddReview />} />
-          <Route path="/all-reviews" element={<AllReviews />} />
-          <Route path="/success-stories" element={<SuccessStories />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-1 flex flex-col">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/subjects" element={<Subjects />} />
+              <Route path="/add-review" element={<AddReview />} />
+              <Route path="/all-reviews" element={<AllReviews />} />
+              <Route path="/success-stories" element={<SuccessStories />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+        <DisclaimerFooter />
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
