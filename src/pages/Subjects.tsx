@@ -26,7 +26,7 @@ const Subjects = () => {
   };
 
   const contactOnWhatsApp = () => {
-    const phoneNumber = '12368623068';
+    const phoneNumber = '918168463790';
     let message = 'Hello';
     
     if (selectedSubjects.length > 0) {

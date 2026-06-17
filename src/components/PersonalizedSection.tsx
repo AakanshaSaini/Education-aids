@@ -45,7 +45,7 @@ const PersonalizedSection = () => {
                 "Don't let academic stress hold you back. Connect with us today and let's elevate your grades effectively together."
               </p>
               <a 
-                href="https://wa.me/12368623068?text=Hello" 
+                href="https://wa.me/918168463790?text=Hello" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
